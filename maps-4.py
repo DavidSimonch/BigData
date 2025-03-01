@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-DATA_URL = 'uber-raw-data-sep14.csv'
-DATE_COLUMN = 'Date/Time'
+DATA_URL = "/Users/simonchi/BigData_Proyecto/bigdata/csv/uber_dataset.csv"
+DATE_COLUMN = "Date/Time" 
 
 @st.cache
 def load_data(number_rows):
