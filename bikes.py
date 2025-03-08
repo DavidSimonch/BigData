@@ -5,9 +5,9 @@ import numpy as np
 st.title('Cicle Rides in NYC')
 
 DATE_COLUMN = 'started_at'
-DATA_URL = ("https://github.com/adsoftsito/streamlit-m5/blob/main/citibike-tripdata.csv")
+DATA_URL = ("/Users/simonchi/BigData_Proyecto/bigdata/csv/citibike-tripdata.csv")
 
-@st.cache_data
+@st.cache
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
