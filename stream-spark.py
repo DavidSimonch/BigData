@@ -3,7 +3,7 @@ import requests
 import pandas  as pd
 import json
 
-def post_spark_job(user, repo, job, token):
+def post_spark_job(user, repo, job, token,codeurl, dataseturl):
     # Define the API endpoint
     url = 'https://api.github.com/repos/' + user + '/' + repo + '/dispatches'
     # Define the data to be sent in the POST request
