@@ -8,7 +8,11 @@ def post_spark_job(user, repo, job, token):
     url = 'https://api.github.com/repos/' + user + '/' + repo + '/dispatches'
     # Define the data to be sent in the POST request
     payload = {
-      "event_type": job
+      "event_type": job,
+      "client_playloadd": {
+          "codeurl":  codeurl,
+          "dataseturl": dataseturl
+      }
     }
 
     headers = {
@@ -35,9 +39,12 @@ github_user  =  st.text_input('Github user', value='adsoftsito')
 github_repo  =  st.text_input('Github repo', value='bigdata')
 spark_job    =  st.text_input('Spark job', value='spark')
 github_token =  st.text_input('Github token', value='***')
+code_url     =  st.text_input('Code URL', value='')
+dataset_url  =  st.text_input('Dataset URL', value='')
+
 
 if st.button("POST spark submit"):
-    post_spark_job(github_user, github_repo, spark_job, github_token)
+    post_spark_job(github_user, github_repo, spark_job, github_token,code_url, dataset_url)
 
 # Funcion para obtener un get (checar en donde estan los resultados)
 
