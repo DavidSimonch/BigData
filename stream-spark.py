@@ -9,7 +9,7 @@ def post_spark_job(user, repo, job, token,codeurl, dataseturl):
     # Define the data to be sent in the POST request
     payload = {
       "event_type": job,
-      "client_playloadd": {
+      "client_playload": {
           "codeurl":  codeurl,
           "dataseturl": dataseturl
       }
@@ -44,7 +44,7 @@ dataset_url  =  st.text_input('Dataset URL', value='')
 
 
 if st.button("POST spark submit"):
-    post_spark_job(github_user, github_repo, spark_job, github_token,code_url, dataset_url)
+    post_spark_job(github_user, github_repo, spark_job, github_token, code_url, dataset_url)
 
 # Funcion para obtener un get (checar en donde estan los resultados)
 
